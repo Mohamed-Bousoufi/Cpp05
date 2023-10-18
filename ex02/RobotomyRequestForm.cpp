@@ -11,12 +11,12 @@ RobotomyRequestForm :: RobotomyRequestForm(const std :: string target) : AForm("
     
 }
 
-RobotomyRequestForm :: RobotomyRequestForm(RobotomyRequestForm &copy)
+RobotomyRequestForm :: RobotomyRequestForm(const RobotomyRequestForm &copy)
 {
     *this = copy;
 }
 
-RobotomyRequestForm &RobotomyRequestForm :: operator=(RobotomyRequestForm &copy)
+RobotomyRequestForm &RobotomyRequestForm :: operator=(const RobotomyRequestForm &copy)
 {
     this->_target = copy._target;
     return(*this);
@@ -28,11 +28,15 @@ void RobotomyRequestForm :: execute( const Bureaucrat &B)
     {
         if(this->getSign() && const_cast<Bureaucrat &>(B).getGrade() < this->getGradexc())
         {         
-            std :: cout << this->_target << " has been robotomized successfully 50% of the time. " << std :: endl;
+            time_t current;
+            time(&current);
+                if(current % 2 == 0)
+                    std :: cout << this->_target <<" has been robotomized "<< std :: endl;
+                else
+                    std :: cout << "robotomized Failed !!!" << std :: endl;
         }
         else
         {
-            std :: cout << "the robotomy failed. " << std :: endl;
                 throw Bureaucrat ::GradeTooLowException();
         }
     }

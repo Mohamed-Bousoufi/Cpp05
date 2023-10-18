@@ -10,4 +10,5 @@ int main()
     rrf->beSigned(A);
     rrf->execute(A);
     std :: cout << *rrf << std :: endl;
+    delete rrf;
 }

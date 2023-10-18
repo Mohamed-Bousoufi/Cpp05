@@ -10,12 +10,12 @@ PresidentialPardonForm :: PresidentialPardonForm(const std :: string &target) : 
     
 }
 
-PresidentialPardonForm :: PresidentialPardonForm(PresidentialPardonForm &copy) 
+PresidentialPardonForm :: PresidentialPardonForm(const PresidentialPardonForm &copy) 
 {
     *this = copy;
 }
 
-PresidentialPardonForm &PresidentialPardonForm :: operator=(PresidentialPardonForm &copy)
+PresidentialPardonForm &PresidentialPardonForm :: operator=( const PresidentialPardonForm &copy)
 {
     this->_target = copy._target;
     return(*this);

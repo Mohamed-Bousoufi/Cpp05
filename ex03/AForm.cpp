@@ -24,13 +24,13 @@ AForm :: AForm(const std :: string name,const int gradeSign,const int gradeExc)
     
 }
 
-AForm & AForm :: operator=(AForm &copy)
+AForm & AForm :: operator=(const AForm &copy)
 {
     this->_sign = copy._sign;
     return(*this);
 }
 
-AForm :: AForm(AForm & copy) : _name(copy._name) , _gradeSign(copy._gradeSign),_gradeExc(copy._gradeExc)
+AForm :: AForm(const AForm & copy) : _name(copy._name) , _gradeSign(copy._gradeSign),_gradeExc(copy._gradeExc)
 {
     this->_sign = copy._sign;
     *this = copy;

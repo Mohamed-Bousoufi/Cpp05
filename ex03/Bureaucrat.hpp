@@ -14,8 +14,8 @@ class Bureaucrat
         /* Orthodox Canonical Form */
         Bureaucrat();
         Bureaucrat(const std :: string _name,int grade);
-        Bureaucrat(Bureaucrat &copy);
-        Bureaucrat & operator=(Bureaucrat &copy);
+        Bureaucrat(const Bureaucrat &copy);
+        Bureaucrat & operator=(const Bureaucrat &copy);
         ~Bureaucrat();
 
         //setter and getter

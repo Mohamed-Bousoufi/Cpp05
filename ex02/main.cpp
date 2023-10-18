@@ -12,15 +12,15 @@ int main ()
     ShrubberyCreationForm Shru("berry");
 
 
-    R.execute(B);
-    P.execute(B);
-    Shru.execute(B);
+    // R.execute(B);
+    // P.execute(B);
+    // Shru.execute(B);
     B.signForm(R);
-    B.signForm(P);
-    B.signForm(Shru);
+    // B.signForm(P);
+    // B.signForm(Shru);
     B.executeForm(R);
-    B.executeForm(P);
-    B.executeForm(Shru);
+    // B.executeForm(P);
+    // B.executeForm(Shru);
 
 
     

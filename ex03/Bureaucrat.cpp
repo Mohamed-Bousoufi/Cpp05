@@ -22,15 +22,14 @@ Bureaucrat :: Bureaucrat(const std :: string name,int grade) : _name(name)
     }
     
 }
-Bureaucrat :: Bureaucrat(Bureaucrat &copy) :_name(copy._name) , _grade(copy._grade)
+Bureaucrat :: Bureaucrat(const Bureaucrat &copy) :_name(copy._name) , _grade(copy._grade)
 {
-    this->_grade = copy.getGrade();
     *this = copy;
 }
 
-Bureaucrat & Bureaucrat :: operator=(Bureaucrat & copy)
+Bureaucrat & Bureaucrat :: operator=(const Bureaucrat & copy)
 {
-    this->_grade = copy.getGrade();
+    this->_grade = copy._grade;
     return(*this);
 }
 
@@ -53,7 +52,7 @@ void Bureaucrat :: incrementGrade()
 {
     try
     {
-        if(this->getGrade() == 1)
+        if(this->getGrade() <= 1 || this->getGrade() > 150)
             throw Bureaucrat ::GradeTooHighException();
         else
             _grade--;
@@ -69,7 +68,7 @@ void Bureaucrat :: decrementGrade()
 {
     try
     {
-        if(this->getGrade() == 150)
+        if(this->getGrade() >= 150 || this->getGrade() < 1)
             throw Bureaucrat :: GradeTooLowException();
         else
             _grade++;

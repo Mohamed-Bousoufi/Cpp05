@@ -3,7 +3,7 @@
 int main()
 {
     
-    Bureaucrat A("persone",150);
+    Bureaucrat A("persone",250);
     Bureaucrat B(A);
     
     A.decrementGrade();

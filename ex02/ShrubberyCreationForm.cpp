@@ -12,12 +12,12 @@ ShrubberyCreationForm :: ShrubberyCreationForm(const std :: string &target) : AF
     
 }
 
-ShrubberyCreationForm :: ShrubberyCreationForm(ShrubberyCreationForm &copy)
+ShrubberyCreationForm :: ShrubberyCreationForm(const ShrubberyCreationForm &copy)
 {
     *this = copy;
 }
 
-ShrubberyCreationForm &ShrubberyCreationForm :: operator=(ShrubberyCreationForm &copy)
+ShrubberyCreationForm &ShrubberyCreationForm :: operator=(const ShrubberyCreationForm &copy)
 {
     this->_target = copy._target;
     return(*this);

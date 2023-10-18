@@ -11,8 +11,8 @@ class PresidentialPardonForm : public AForm
     public :
     PresidentialPardonForm();
     PresidentialPardonForm(const std :: string &target);
-    PresidentialPardonForm(PresidentialPardonForm &copy);
-    PresidentialPardonForm & operator=(PresidentialPardonForm &copy);
+    PresidentialPardonForm(const PresidentialPardonForm &copy);
+    PresidentialPardonForm & operator=(const PresidentialPardonForm &copy);
     ~PresidentialPardonForm();
 
     void execute(Bureaucrat const &executor);
